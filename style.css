@@ -3,32 +3,46 @@
     margin: 0px;
 }
 header {
-    width: 100%;
+    width: auto;
     height: 50px;
+    padding: 10px 0px 0px 40px;
+    border-bottom: 2px solid white;
     font-size: 23pt;
     background: lightsteelblue;
     color: white;
 }
 nav {
-    width: 100%;
-    height: 30px;
+    width: auto;
+    height: 35px;
+    border-bottom: 2px solid white;
     font-size: 14pt;
     background: gray;
     color: white;
 }
 ul {
-    display: inline-block;
+    display: inline-block; /*Разместить элементы в ряд*/
+    margin-left: 60px;
 }
 li {
     display: inline-block;
+    padding: 5px;
+}
+#search {
+    width: 180px;
+    margin-left: 40px;
 }
 main {
     width: auto;
+    height: 500px;
+    border-bottom: 3px solid steelblue;
     background: gainsboro;
 }
+
+
+
 footer {
-    width: 100%;
+    width: auto;
     height: 50px;
-    background: darkblue;
+    background: slategrey;
     color: white;
 }
