@@ -34,10 +34,27 @@ li {
 main {
     width: auto;
     height: 500px;
+    display: flex; /*Разместить все элементы по флексу в ряд */
     border-bottom: 3px solid steelblue;
     background: gainsboro;
 }
-
+article {
+    width: 500px;
+    height: 200px;
+    /*margin: 0px 0px 0px 60px;*/
+    background: gold;
+}
+.task {
+    background: rebeccapurple;
+}
+.image_task {
+    background: red;
+}
+aside {
+    width: 300px;
+    height: 200px;
+    background: green;
+}
 
 
 footer {
