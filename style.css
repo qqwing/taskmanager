@@ -1,6 +1,6 @@
 * {
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
 }
 header {
     width: auto;
@@ -33,24 +33,33 @@ li {
 }
 main {
     width: auto;
-    height: 500px;
+    height: 800px;
     display: flex; /*Разместить все элементы по флексу в ряд */
     border-bottom: 3px solid steelblue;
     background: gainsboro;
 }
 article {
     width: 500px;
-    height: 200px;
-    /*margin: 0px 0px 0px 60px;*/
+    height: 650px;
+    margin: 10px 0px 0px 70px;
     background: gold;
 }
 .task {
+    height: 95px;
+    margin: 10px 0px 0px 0px;
+    padding: 20px 0px 0px 80px;
+    box-sizing: border-box; /*не увеличивает блок за счет padding */
+    font-size: 12pt;
+    hyphens: auto; /*Для переноса текста в блоке */
     background: rebeccapurple;
 }
+/* Планировалось изображение у каждого задания
 .image_task {
     background: red;
 }
+*/
 aside {
+    margin: 10px 0px 0px 15px;
     width: 300px;
     height: 200px;
     background: green;
@@ -60,6 +69,8 @@ aside {
 footer {
     width: auto;
     height: 50px;
+    padding: 10px 0px 0px 50px;
+    box-sizing: border-box;
     background: slategrey;
     color: white;
 }
