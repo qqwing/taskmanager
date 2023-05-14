@@ -2,11 +2,11 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Task Manager</title>
+        <title>Tactical and strategic</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>Планировщик заданий</header>
+        <header>Тактическо-стратегический редактор для PW</header>
         <nav>
             <ul>
                 <li>Welcome!</li>
@@ -16,7 +16,8 @@
             <button id="search">Search</button>
         </nav>
         <main>
-            <article>
+            <article id="strategy_block">
+                <section class="task_title">Постановка стретегических задач</section>
                 <section class="task">Первая задача: набросать кнопки с функционалом редактирования, отправки и удаления текста задачи прямо в блоке task</section>
                 <section class="task">Вторая задача</section>
                 <section class="task">Третья задача</section>
@@ -24,8 +25,21 @@
                 <section class="task">Пятая задача</section>
                 <!--<figure class="image_task">Картинка справа у задачи 1</figure>-->
             </article>
-            <aside>блок виджета загрузки</aside>
+            <div id="map_tactics_pics_div">
+                <aside>блок виджета загрузки карты</aside>
+                <div id="picture_div">
+                    <img src="img/picture-human.jpg" width="120" height="170" alt="human">
+                    <img src="img/picture-lfy.jpg" width="120" height="170" alt="lfy">
+                    <img src="img/picture-mech.jpg" width="120" height="170" alt="mech">
+                </div>
+                <article id="tactics_block">
+                    <section class="task_title">Постановка тактических задач</section>
+                    <section class="task">Первая задача</section>
+                    <section class="task">Третья задача</section>
+                    <section class="task">Четвертая задача</section>
+                </article>
+            </div>
         </main>
-        <footer>by Artem Lyubimov 2023</footer>
+        <footer>by kit 2023</footer>
     </body>
 </html>

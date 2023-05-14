@@ -31,18 +31,23 @@ li {
     width: 180px;
     margin-left: 40px;
 }
+
 main {
     width: auto;
-    height: 800px;
+    height: 680px;
     display: flex; /*Разместить все элементы по флексу в ряд */
     border-bottom: 3px solid steelblue;
     background: gainsboro;
 }
-article {
+#strategy_block {
     width: 500px;
     height: 650px;
     margin: 10px 0px 0px 70px;
-    background: gold;
+    /*background: gold;*/
+}
+.task_title {
+    font-size: 14pt;
+    background: yellowgreen;
 }
 .task {
     height: 95px;
@@ -53,18 +58,41 @@ article {
     hyphens: auto; /*Для переноса текста в блоке */
     background: rebeccapurple;
 }
-/* Планировалось изображение у каждого задания
-.image_task {
-    background: red;
+
+#map_tactics_pics_div { /*обертка для отдельного флекс позиционирония */
+    width: 740px;
+    height: 650px;
+    display: flex;
+    position: relative;
+    margin: 10px 0px 0px 10px;
+    flex-direction: column;
+    /*background: red;*/
 }
-*/
-aside {
+#tactics_block {
+    width: 500px;
+    height: 350px;
     margin: 10px 0px 0px 15px;
+    /*background: hotpink;*/
+}
+aside {
     width: 300px;
     height: 200px;
-    background: green;
+    margin: 0px 0px 0px 15px;
+    background: ghostwhite;
 }
 
+#picture_div {
+    width: 380px;
+    height: 170px;
+    display: flex;
+    position: absolute; /*отмена родительского flex*/
+    margin: 0px 0px 0px 330px;
+    padding-left: 10px;
+    /*background: teal;*/
+}
+img {
+    margin-right: 10px;
+}
 
 footer {
     width: auto;
