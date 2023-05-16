@@ -1,5 +1,5 @@
 <?php
-// Подключаемся к базе данных
+// подключение к бд
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -9,19 +9,19 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Получаем данные из формы создания задания
+// получение данных из формы создания задания
 $title = $_POST['title'];
 $description = $_POST['description'];
 $assigned_to = $_POST['assigned_to'];
 $due_date = $_POST['due_date'];
 
-// Проверяем данные на валидность
+// проверка данных на валидность
 if (empty($title) || empty($description) || empty($assigned_to) || empty($due_date)) {
     echo "All fields are required";
     exit;
 }
 
-// Вставляем данные в таблицу заданий
+// вставка данных в таблицу заданий
 $sql = "INSERT INTO task (title, description, assigned_to, due_date)
         VALUES ('$title', '$description', '$assigned_to', '$due_date')";
 if (mysqli_query($conn, $sql)) {
@@ -30,6 +30,6 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating task: " . mysqli_error($conn);
 }
 
-// Закрываем соединение с базой данных
+// закрытие соединения с базой данных
 mysqli_close($conn);
 ?>
