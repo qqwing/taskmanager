@@ -43,7 +43,7 @@ main {
     width: 500px;
     height: 650px;
     margin: 10px 0px 0px 70px;
-    background: gold;
+    /*background: gold;*/
 }
 .task_title {
     font-size: 14pt;
@@ -66,13 +66,13 @@ main {
     position: relative;
     margin: 10px 0px 0px 10px;
     flex-direction: column;
-    background: red;
+    /*background: red;*/
 }
 #tactics_block {
     width: 500px;
     height: 350px;
     margin: 10px 0px 0px 15px;
-    background: hotpink;
+    /*background: hotpink;*/
 }
 aside {
     width: 300px;
@@ -88,7 +88,7 @@ aside {
     position: absolute; /*отмена родительского flex*/
     margin: 0px 0px 0px 330px;
     padding-left: 10px;
-    background: teal;
+    /*background: teal;*/
 }
 img {
     margin-right: 10px;
@@ -96,7 +96,7 @@ img {
 
 form {
     width: 250px;
-    height: 280px;
+    height: 350px;
     margin: 10px 0px 0px 50px;
     padding: 15px 0px 0px 30px;
     box-sizing: border-box;

@@ -10,20 +10,22 @@ if (!$conn) {
 }
 
 // получение данных из формы создания задания
+$category = $_POST['category'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $assigned_to = $_POST['assigned_to'];
-$due_date = $_POST['due_date'];
+$move = $_POST['move'];
+//$due_date = $_POST['due_date'];
 
 // проверка данных на валидность
-if (empty($title) || empty($description) || empty($assigned_to) || empty($due_date)) {
+if (empty($category) || empty($title) || empty($description) || empty($assigned_to) || empty($move)) {
     echo "All fields are required";
     exit;
 }
 
 // вставка данных в таблицу заданий
-$sql = "INSERT INTO task (title, description, assigned_to, due_date)
-        VALUES ('$title', '$description', '$assigned_to', '$due_date')";
+$sql = "INSERT INTO task (category, title, description, assigned_to, move)
+        VALUES ('$category', '$title', '$description', '$assigned_to', '$move')";
 if (mysqli_query($conn, $sql)) {
     echo "Task created successfully";
 } else {
