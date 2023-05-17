@@ -6,19 +6,28 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <?php
+        session_start();
+        // проверка, есть ли сообщение об успешной отправке в переменной сессии
+        if (isset($_SESSION['success_message'])) {
+          // если есть, вывод сообщения и удаления переменной сессии
+          echo "<p>" . $_SESSION['success_message'] . "</p>";
+          unset($_SESSION['success_message']);
+        }
+        ?>        
         <header>Тактическо-стратегический редактор для PW</header>
         <nav>
             <ul>
                 <li>Welcome!</li>
-                <li>About</li>
-                <li>Help</li>
+                <li>Здесь находятся уже составленные задачи</li>
+                <li>с загруженной картой и пикчами</li>
             </ul>
-            <button id="search">Search</button>
+            <button id="search">Найти задачу</button>
         </nav>
         <main>
             <article id="strategy_block">
                 <section class="task_title">Постановка стретегических задач</section>
-                <section class="task">Первая задача: набросать кнопки с функционалом редактирования, отправки и удаления текста задачи прямо в блоке task</section>
+                <section class="task">Первая задача</section>
                 <section class="task">Вторая задача</section>
                 <section class="task">Третья задача</section>
                 <section class="task">Четвертая задача</section>
@@ -34,8 +43,8 @@
                 <article id="tactics_block">
                     <section class="task_title">Постановка тактических задач</section>
                     <section class="task">Первая задача</section>
+                    <section class="task">Вторая задача</section>
                     <section class="task">Третья задача</section>
-                    <section class="task">Четвертая задача</section>
                 </article>
             </div>
         </main>

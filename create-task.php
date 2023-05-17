@@ -26,12 +26,18 @@ if (empty($category) || empty($title) || empty($description) || empty($assigned_
 // вставка данных в таблицу заданий
 $sql = "INSERT INTO task (category, title, description, assigned_to, move)
         VALUES ('$category', '$title', '$description', '$assigned_to', '$move')";
-if (mysqli_query($conn, $sql)) {
-    echo "Task created successfully";
-} else {
-    echo "Error creating task: " . mysqli_error($conn);
-}
 
+$result = $conn->query($sql);
+if ($result) {
+    //сохранение сообщения об успешной отправке в переменной сессии
+    session_start();
+    $_SESSION['success_message'] = "Task created successfully!";
+    header("Location: profile.php");
+    exit();
+} else {
+  echo "Error creating task: " . $conn->error;
+}
+ 
 // закрытие соединения с базой данных
 mysqli_close($conn);
 ?>

@@ -56,7 +56,7 @@ main {
     box-sizing: border-box; /*не увеличивает блок за счет padding */
     font-size: 12pt;
     hyphens: auto; /*Для переноса текста в блоке */
-    background: rebeccapurple;
+    background: seashell;
 }
 
 #map_tactics_pics_div { /*обертка для отдельного флекс позиционирония */
