@@ -38,6 +38,6 @@ if ($result) {
   echo "Error creating task: " . $conn->error;
 }
  
-// закрытие соединения с базой данных
+// закрытие соединения с бд
 mysqli_close($conn);
 ?>

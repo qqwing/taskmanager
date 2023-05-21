@@ -34,7 +34,8 @@ li {
 
 main {
     width: auto;
-    height: 680px;
+    height: 980px;
+    overflow: auto;
     display: flex; /*Разместить все элементы по флексу в ряд */
     border-bottom: 3px solid steelblue;
     background: gainsboro;
@@ -50,9 +51,10 @@ main {
     background: yellowgreen;
 }
 .task {
-    height: 95px;
+    width: auto;
+    height: 150px;
     margin: 10px 0px 0px 0px;
-    padding: 20px 0px 0px 80px;
+    padding: 10px 0px 0px 20px;
     box-sizing: border-box; /*не увеличивает блок за счет padding */
     font-size: 12pt;
     hyphens: auto; /*Для переноса текста в блоке */

@@ -14,24 +14,71 @@
           echo "<p>" . $_SESSION['success_message'] . "</p>";
           unset($_SESSION['success_message']);
         }
-        ?>        
+        ?>
+
         <header>Тактическо-стратегический редактор для PW</header>
         <nav>
             <ul>
-                <li>Welcome!</li>
-                <li>Здесь находятся уже составленные задачи</li>
-                <li>с загруженной картой и пикчами</li>
+                <li><a href="index.html">Добавить задачу</a></li>
+                <li>Здесь находятся уже составленные задачи с загруженной картой и пикчами</li>
             </ul>
             <button id="search">Найти задачу</button>
         </nav>
         <main>
             <article id="strategy_block">
                 <section class="task_title">Постановка стретегических задач</section>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "root";
+                $dbname = "task_field";
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                $sql = "SELECT * FROM task";
+                $result = $conn->query($sql);
+
+                // вывод списка заданий
+                while ($row = $result->fetch_assoc()) {
+                    // заполнение полей формы значениями из бд
+                    $category = $row['category'];
+                    $title = $row['title'];
+                    $description = $row['description'];
+                    $assigned_to = $row['assigned_to'];
+                    $move = $row['move'];
+
+                    if ($category == "1"){
+                        echo "
+                            <form class='task'>
+                                <label for='category'>Категория:</label>
+                                <input type='text' name='category' value='$category' disabled>
+                                <br>
+                                <label for='title'>Название:</label>
+                                <input type='text' name='title' value='$title' disabled>
+                                <br>
+                                <label for='description'>Описание:</label>
+                                <textarea name='description' disabled>$description</textarea>
+                                <br>
+                                <label for='assigned_to'>Каким юнитом:</label>
+                                <input type='text' name='assigned_to' value='$assigned_to' disabled>
+                                <br>
+                                <label for='move'>На какой ход:</label>
+                                <input type='text' name='move' value='$move' disabled>
+                                <br>
+                            </form>
+                            <hr>
+                        ";
+                    }
+                }
+                $conn->close();
+                ?>
+                <!--
+                <section class="task_title">Постановка стретегических задач</section>
                 <section class="task">Первая задача</section>
                 <section class="task">Вторая задача</section>
                 <section class="task">Третья задача</section>
                 <section class="task">Четвертая задача</section>
                 <section class="task">Пятая задача</section>
+                -->
             </article>
             <div id="map_tactics_pics_div">
                 <aside>блок виджета загрузки карты</aside>
@@ -42,9 +89,55 @@
                 </div>
                 <article id="tactics_block">
                     <section class="task_title">Постановка тактических задач</section>
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "root";
+                    $dbname = "task_field";
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+                    $sql = "SELECT * FROM task";
+                    $result = $conn->query($sql);
+    
+                    // вывод списка заданий
+                    while ($row = $result->fetch_assoc()) {
+                        // заполнение полей формы значениями из бд
+                        $category = $row['category'];
+                        $title = $row['title'];
+                        $description = $row['description'];
+                        $assigned_to = $row['assigned_to'];
+                        $move = $row['move'];
+    
+                        if ($category == "2"){
+                            echo "
+                                <form class='task'>
+                                    <label for='category'>Категория:</label>
+                                    <input type='text' name='category' value='$category' disabled>
+                                    <br>
+                                    <label for='title'>Название:</label>
+                                    <input type='text' name='title' value='$title' disabled>
+                                    <br>
+                                    <label for='description'>Описание:</label>
+                                    <textarea name='description' disabled>$description</textarea>
+                                    <br>
+                                    <label for='assigned_to'>Каким юнитом:</label>
+                                    <input type='text' name='assigned_to' value='$assigned_to' disabled>
+                                    <br>
+                                    <label for='move'>На какой ход:</label>
+                                    <input type='text' name='move' value='$move' disabled>
+                                    <br>
+                                </form>
+                                <hr>
+                            ";
+                        }
+                    }
+                    $conn->close();
+                    ?>
+                    <!--
                     <section class="task">Первая задача</section>
                     <section class="task">Вторая задача</section>
                     <section class="task">Третья задача</section>
+                    -->
                 </article>
             </div>
         </main>
