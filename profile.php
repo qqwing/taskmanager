@@ -14,8 +14,7 @@
           echo "<p>" . $_SESSION['success_message'] . "</p>";
           unset($_SESSION['success_message']);
         }
-        ?>
-
+        ?>    
         <header>Тактическо-стратегический редактор для PW</header>
         <nav>
             <ul>
