@@ -13,9 +13,9 @@ while ($row = $result->fetch_assoc()) {
     $move = $row['move'];
     if ($category == "2"){
         echo "
-            <form class='task'>
-                <label for='category'>Категория:</label>
-                <input type='text' name='category' value='$category' disabled>
+            <form class='task' method='post'>
+                <!--<label for='category'>Категория:</label>-->
+                <input type='hidden' name='category' value='$category' disabled>
                 <br>
                 <label for='title'>Название:</label>
                 <input type='text' name='title' value='$title' disabled>
@@ -29,9 +29,12 @@ while ($row = $result->fetch_assoc()) {
                 <label for='move'>На какой ход:</label>
                 <input type='text' name='move' value='$move' disabled>
                 <br>
+                <button type='submit' name='delete_task' value='{$row['id']}'>Удалить задание</button>
             </form>
             <hr>
         ";
     }
 }
+//обработка запроса об удалении таска
+require 'delete-task.php'
 ?>
